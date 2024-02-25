@@ -37,18 +37,18 @@ export const ResponsiveAreaChart = ({
                     bottom: 0,
                 }}
             >
-                <CartesianGrid strokeDasharray="0 0 0" />
+                
                 <XAxis
                     dataKey="date"
-                    tickCount={data?.length ?? 0}
+                    
                     tick={{
                         stroke: "light-grey",
-                        strokeWidth: 0.5,
+                       
                         fontSize: "12px",
                     }}
                 />
                 <YAxis
-                    tickCount={13}
+                    
                     tick={{
                         stroke: "light-grey",
                         strokeWidth: 0.5,
@@ -68,9 +68,8 @@ export const ResponsiveAreaChart = ({
                 <Area
                     type="monotone"
                     dataKey="value"
-                    stroke={colors?.stroke}
                     strokeWidth={3}
-                    fill={colors?.fill}
+                    fill={"white"}
                     dot={{
                         stroke: colors?.stroke,
                         strokeWidth: 3,

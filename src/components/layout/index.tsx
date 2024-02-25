@@ -5,9 +5,9 @@ import { Menu } from "../menu";
 export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
     return (
         <div className="">
-            <Menu />
+            {/* <Menu /> */}
             <div className="p-4 bg-zinc-100">
-                <Breadcrumb />
+                {/* <Breadcrumb /> */}
                 <div>{children}</div>
             </div>
         </div>
