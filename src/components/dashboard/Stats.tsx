@@ -7,6 +7,7 @@ import {
     UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { GetListResponse } from "@refinedev/core";
+import { PencilIcon } from "@heroicons/react/24/outline";
 
 type TStats = {
     dailyRevenue?: GetListResponse<IChartDatum>;
@@ -17,19 +18,19 @@ type TStats = {
 const Stats = ({ dailyRevenue, dailyOrders, newCustomers }: TStats) => {
     return (
         <div className="w-full mx-auto mb-4 flex flex-col justify-center items-stretch md:flex-row md:justify-between ">
-            <div className="w-full mx-auto md:flex-1 md:mr-2">
+            <div className="w-full mx-auto md:flex-1 md:mr-2 bg-gray-200 rounded-lg">
                 <KpiCard
                     title="Online store sessions"
                     data={dailyRevenue}
                     formatTotal={(value: number | string) => `${value}`}
-                    //icon={false}
+                    icon={<PencilIcon className="h-6 w-6" />}
                     colors={{
                         stroke: "rgb(54, 162, 235)",
                         fill: "rgba(54, 162, 235, 0.2)",
                     }}
                 />
             </div>
-            <div className="w-full mx-auto md:flex-1">
+            <div className="w-full mx-auto md:flex-1 hover:bg-gray-100">
                 <KpiCard
                     title="Net return value"
                     data={dailyOrders}

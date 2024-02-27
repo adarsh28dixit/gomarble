@@ -3,7 +3,7 @@ import React from "react";
 type TKpiCardProps = {
   title: string;
   data: any;
-  //icon: JSX.Element;
+  icon?: JSX.Element;
   colors: {
     stroke: string;
     fill: string;
@@ -14,7 +14,7 @@ type TKpiCardProps = {
 export const KpiCard = ({
   title,
   data,
-  //icon,
+  icon,
   colors,
   formatTotal = (value) => value,
 }: TKpiCardProps) => {
@@ -25,11 +25,15 @@ export const KpiCard = ({
   const textColor = total > trend ? "seagreen" : "crimson";
 
   return (
-    <div className="stat my-2 py-4 flex-1 bg-gray-100  rounded-md">
-      <div className="stat-title w-fit text-l border-b border-dashed">{title}</div>
-      <div className="pt-2">
+    <div className="stat my-2 py-4 flex-1 rounded-2xl">
+      <div className="flex justify-between">
+      <div className="text-sm w-fit border-b border-dashed">{title}</div>
+      {icon}
+      </div>
+      
+      <div className="pt-2 text">
         {formatTotal(total ?? "...")}{" "}
-        <span className="mx-1 text-sm">{percent}</span>
+        <span className="mx-1 text-xs">{percent}</span>
       </div>
     </div>
   );
